@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Instalación de Windows en Notebooks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <br>
+            <h1 class="title">Guía de Instalación de Windows en Notebooks</h1>
+            <br>
+
+            <h2 class="subtitle">Preparación del Medio de Instalación</h2>
+            <p>Descargar la imagen del sistema operativo (ISO): Visita la página oficial del sistema operativo para descargar la ISO.</p>
+            <p>Crear un medio de instalación USB: Utiliza herramientas como Rufus, Etcher o la herramienta de creación de medios de Windows. Asegúrate de seleccionar "GPT para UEFI" en las opciones de partición.</p>
+            <br>
+
+            <h2 class="subtitle">Configuración del BIOS/UEFI</h2>
+            <p>Entrar en el menú UEFI/BIOS: Reinicia tu PC y presiona la tecla correspondiente (F2, F10, DEL, etc.) para entrar al menú UEFI/BIOS.</p>
+            <p>Habilitar UEFI: En el menú de configuración asegúrate de que el modo de arranque esté configurado en UEFI y no en Legacy.</p>
+            <p>Deshabilitar Secure Boot temporalmente: Ve a la configuración de Secure Boot y deshabilítalo. Esto a veces es necesario para instalar ciertos sistemas operativos.</p>
+            <br>
+
+            <h2 class="subtitle">Instalación del Sistema Operativo</h2>
+            <p>Arrancar desde el USB: Conecta el USB y selecciona arrancar desde él en el menú de arranque.</p>
+            <p>Sigue el proceso de instalación: Selecciona las opciones de idioma, formato del disco y procede con la instalación.</p>
+            <br>
+
+            <h2 class="subtitle">Manejo de las Claves de Seguridad (Secure Boot)</h2>
+            <p>Habilitar Secure Boot: Después de la instalación, vuelve al menú UEFI/BIOS y habilita Secure Boot.</p>
+            <p>Agregar claves de seguridad: Algunas distribuciones de Linux y versiones de Windows permiten agregar sus claves de seguridad al firmware para asegurar que solo se ejecuten sistemas operativos de confianza.</p>
+            <br>
+
+            <h2 class="subtitle">Requisitos de Instalación</h2>
+            <p><strong>Windows 11</strong></p>
+            <ul>
+                <li>Procesador: 2 o más núcleos de 1 GHz o más y tiene que ser un procesador de 64 bits compatible o sistema en un chip (SoC).</li>
+                <li>Memoria RAM: Necesitarás un mínimo de 4 GB de memoria RAM.</li>
+                <li>Almacenamiento: Necesitarás un mínimo de 64 GB de espacio libre en el disco duro donde vayas a instalarlo.</li>
+                <li>Firmware del sistema: Necesitarás un ordenador con UEFI y compatible con Secure Boot.</li>
+                <li>TPM: Necesitas compatibilidad con el Módulo de plataforma segura 2.0 o TPM 2.0.</li>
+                <li>Tarjeta gráfica: Tu tarjeta gráfica necesita ser compatible con DirectX 12 o posterior y con el controlador WDDM 2.0.</li>
+                <li>Pantalla: Necesitarás una pantalla de un mínimo de 9 pulgadas en diagonal con 720p de alta definición y canal de 8 bits por color.</li>
+                <li>Otros: Vas a necesitar tener una cuenta de Microsoft y necesitarás estar conectado a Internet para la configuración inicial y cualquier actualización.</li>
+            </ul>
+
+            <p><strong>Windows Server 2022</strong></p>
+            <ul>
+                <li>Procesador: 1.4 GHz 64-bit.</li>
+                <li>Memoria RAM: 512 MB (2 GB para la opción de instalación Server with Desktop Experience).</li>
+                <li>Almacenamiento: 32 GB.</li>
+                <li>Tarjeta gráfica: Compatible con Super VGA (1024 x 768).</li>
+            </ul>
+            <br>
+
+            <h2 class="subtitle">Funciones del Módulo TPM</h2>
+            <ul>
+                <li>Almacenamiento seguro de claves.</li>
+                <li>Generación de claves.</li>
+                <li>Integridad de la plataforma.</li>
+                <li>Cifrado de datos.</li>
+                <li>Autenticación.</li>
+            </ul>
+            <br>
+
+            <h2 class="subtitle">Utilitarios para Cambiar el Tamaño de las Particiones</h2>
+            <ul>
+                <li>GParted</li>
+                <li>MiniTool Partition Wizard</li>
+                <li>EaseUS Partition Master</li>
+            </ul>
+            <br>
+
+            <h2 class="subtitle">Gestores de Arranque para Elegir Sistemas Operativos Múltiples</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Gestor de arranque</th>
+                        <th>Soporte MBR</th>
+                        <th>Soporte UEFI</th>
+                        <th>Características</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GRUB (GRand Unified Bootloader)</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>Personalizable, soporte para múltiples sistemas operativos y configuraciones avanzadas.</td>
+                    </tr>
+                    <tr>
+                        <td>rEFInd</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                        <td>Interfaz gráfica amigable, fácil de configurar, ideal para sistemas con EFI.</td>
+                    </tr>
+                    <tr>
+                        <td>Clover Bootloader</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>Usado comúnmente en hackintosh, ofrece soporte extenso para macOS.</td>
+                    </tr>
+                    <tr>
+                        <td>Windows Boot Manager</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>Integrado en Windows, fácil de usar para configuraciones dual boot con Windows.</td>
+                    </tr>
+                    <tr>
+                        <td>Syslinux</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>Ligero, fácil de configurar para entornos Linux en MBR.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            
+            <h2 class="subtitle">Comparativa de Administradores de Archivos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Administrador de Archivos</th>
+                        <th>Plataforma</th>
+                        <th>Funcionalidades</th>
+                        <th>Capacidades de Expansión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Windows File Explorer</td>
+                        <td>Windows</td>
+                        <td>Búsqueda rápida, acceso a red, integración con OneDrive</td>
+                        <td>Limitado a complementos de terceros</td>
+                    </tr>
+                    <tr>
+                        <td>Finder</td>
+                        <td>macOS</td>
+                        <td>Integración con iCloud, gestión de etiquetas, fácil de usar</td>
+                        <td>Integrado con aplicaciones de macOS</td>
+                    </tr>
+                    <tr>
+                        <td>Nautilus</td>
+                        <td>Linux (GNOME)</td>
+                        <td>Soporte para extensiones, integración con servicios en la nube</td>
+                        <td>Amplia variedad de extensiones</td>
+                    </tr>
+                    <tr>
+                        <td>Dolphin</td>
+                        <td>Linux (KDE)</td>
+                        <td>Vista dividida, pestañas, terminal integrado</td>
+                        <td>Soporte para plugins y scripts</td>
+                    </tr>
+                    <tr>
+                        <td>Thunar</td>
+                        <td>Linux (Xfce)</td>
+                        <td>Ligero, rápido, soporte para plugins</td>
+                        <td>Extensiones disponibles a través de plugins</td>
+                    </tr>
+                    <tr>
+                        <td>Midnight Commander</td>
+                        <td>Multiplataforma</td>
+                        <td>Interfaz de texto, soporte para FTP y SFTP</td>
+                        <td>Altamente personalizable mediante scripts</td>
+                    </tr>
+                    <tr>
+                        <td>Total Commander</td>
+                        <td>Windows</td>
+                        <td>Pestañas, comparación de archivos, cliente FTP integrado</td>
+                        <td>Soporte para plugins</td>
+                    </tr>
+                    <tr>
+                        <td>Double Commander</td>
+                        <td>Multiplataforma</td>
+                        <td>Pestañas, doble panel, cliente FTP integrado</td>
+                        <td>Compatible con plugins de Total Commander</td>
+                    </tr>
+                    <tr>
+                        <td>Caja</td>
+                        <td>Linux (MATE)</td>
+                        <td>Soporte para plugins, vista dividida</td>
+                        <td>Extensiones disponibles a través de plugins</td>
+                    </tr>
+                    <tr>
+                        <td>Krusader</td>
+                        <td>Linux (KDE)</td>
+                        <td>Interfaz de doble panel, búsqueda avanzada, soporte para archivos comprimidos</td>
+                        <td>Extensiones disponibles a través de plugins</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
